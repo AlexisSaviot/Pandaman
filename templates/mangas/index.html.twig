@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pandaman | {{ manga.title|e }}{% endblock %}
+
+{% block body %}
+    <div class="box">
+        <div class="">
+            <h5 class="">{{ manga.title|e }}</h5>
+        </div>
+        <div class="">
+            <p class="">FR : {{ manga.FrenchRelease| date("d/m/Y") }}</p>
+            <p class="">JP : {{ manga.JapanRelease| date("d/m/Y") }}</p>
+            <p class="">Tomes : {{ manga.volumes| number_format }}</p>
+            <p class="">Tomes : {{ manga.EditorID.name|e }}</p>
+        </div>
+        <div class="">
+            <p class="">{{ manga.description|e }}</p>
+        </div>
+    </div>
+    </br>
+    </br>
+    {% if app.user %}
+        {{ form(commentForm) }}
+    {% endif %}
+    <h5>Commentaires</h5>
+    {% for comment in comments %}
+    <div>
+        <p>
+            <span>{{ comment.UserID.Nickname }}</span>
+            <span>{{ comment.date | date }} </span>
+        </p>
+        <p>
+            {{ comment.content }}
+        </p>
+    </div> </br>
+        
+    {% endfor %}
+{% endblock %}

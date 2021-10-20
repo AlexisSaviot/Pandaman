@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Pandaman{% endblock %}</title>
+        <link rel="icon" href="../medias/pandaman.png" />
+        {# Run `composer require symfony/webpack-encore-bundle`
+        and uncomment the following Encore helpers to start using Symfony UX #}
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset ('css/style.css') }}">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        {% endblock %}
+
+        {% block javascripts %}
+            <script src="https://kit.fontawesome.com/9044914501.js" crossorigin="anonymous"></script>
+            <script src="{{ asset ('js/jquery.js') }}"></script>
+            <script src="{{ asset ('js/script.js') }}"></script>
+        {% endblock %}
+    </head>
+    <body>
+        {% include("partials/navbar.html.twig") %}
+        {% block body %}{% endblock %}
+    </body>
+</html>

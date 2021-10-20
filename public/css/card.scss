@@ -1,0 +1,77 @@
+.box {
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    width: 20rem;
+    height: 27.27rem;
+    padding: 1rem 1.5rem;
+    margin: 0;
+    /* perspective: 1000px; */
+}
+
+.box-inner {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+    object-fit: contain;
+    border-radius: 1rem;
+}
+
+.box:hover .box-inner {
+    transform: rotateY(-180deg);
+}
+
+.box-front, .box-back {
+    position: absolute;
+    display: flex;
+    /* align-items: center; */
+    /* align-content: center; */
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.box-front {
+    background-color: grey;
+    color: #8ebf42;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5) inset;
+}
+
+.box-back {
+    display: grid;
+    align-content: space-between;
+    justify-content: flex-start;
+    background-color: #DDD;
+    color: #424242;
+    transform: rotateY(180deg);
+}
+.back-title{
+    display: flex;
+    justify-content: center;
+    height: max-content;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    height: max-content ;
+}
+.text-card{
+    /* display: flex; */
+    /* width: 100%; */
+    height: max-content;
+}
+.path{
+    /* display: flex; */
+    width: 100%;
+    height: max-content;
+}
+
+.single-img{
+    max-width: 100%;
+}

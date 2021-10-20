@@ -1,0 +1,29 @@
+header{
+    background-color: rgba(53, 63, 70, 0.8);
+    background-size: cover;
+    height: 150px;
+    left: 0;
+    top: 0;
+}
+
+#pandanav{
+    width: 50%;
+    display: inline-block;
+    /*padding-right: 350px;
+    padding-left: 50px;*/
+}
+
+#main-menu{
+    width: 49%;
+    display: inline-block;
+    text-transform: uppercase;
+    color: white;
+    padding-top: 50px;
+}
+
+header li{
+    display: inline;
+    border: 1px solid rgba(0, 0, 0, 0);
+    font-weight: 600;
+    font-size: 24px;
+}

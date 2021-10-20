@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="row">
+    {% for manga in mangas %}
+        <div class="box">
+            <div class="box-inner">
+                <div class="box-front" style="background-image: url('{{ manga.image|e }}'); background-size: cover; background-position : 50%">
+                    {# <div class="front-title">
+                        <a href="manga/{{ manga.id}}"><h5>{{ manga.title|e }}</h5></a>
+                    </div> #}
+                </div>
+                <div class="box-back">
+                    <div class="back-title">
+                        <h5 class="card-title">{{ manga.title|e }}</h5>
+                    </div>
+                    <div class="logo">
+                        <i class="far fa-heart"></i>
+                        <span class="badge badge-primary">FR : {{ manga.FrenchRelease| date("d/m/Y") }}</span>
+                        <span class="badge badge-primary">JP : {{ manga.JapanRelease| date("d/m/Y") }}</span>
+                        <span class="badge badge-primary">Tomes : {{ manga.volumes|e }}</span>
+                        <span class="badge badge-primary">Tomes : {{ manga.EditorID.name|e }}</span>
+                    </div>
+                    <div class="text-card">
+                        <p class="card-text">
+                            {{ manga.description|length > 50 ? manga.description|slice(0, 50) ~ '...' : manga.description  }}
+                        </p>
+                    </div>
+                    <div class="path">
+                        <a href="manga/{{ manga.id}}">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
