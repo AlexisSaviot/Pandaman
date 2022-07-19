@@ -1,7 +1,7 @@
 
 ###> symfony/framework-bundle ##
-.env
-.env.test
+/.env
+/.env.test
 /.env.local
 /.env.local.php
 /.env.*.local
@@ -20,5 +20,3 @@
 ###> symfony/web-server-bundle ###
 /.web-server-pid
 ###< symfony/web-server-bundle ###
-
-phpunit.xml.dist
